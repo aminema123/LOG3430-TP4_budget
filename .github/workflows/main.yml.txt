@@ -1,0 +1,17 @@
+name : Python package
+on : [ push ]
+j o b s :
+b uil d :
+runs−on : ubuntu−l a t e s t
+s t e p s :
+− u s e s : a c t i o n s / checkout@v3
+with :
+f e t c h −depth : 0
+− name : Setup Python
+u s e s : a c t i o n s / setup−python@v4
+with :
+python−v e r s i o n : ” 3. 9 ”
+− name : I n s t a l l package s
+run : pip i n s t a l l −r r e q ui r em e n t s . t x t
+− name : Run t e s t s
+run : python manage . py t e s t
